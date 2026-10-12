@@ -357,34 +357,4 @@ can_drv_t::handle_rx_msg(const uint32_t id, const uint8_t *data,
 // ==========================================
 // Global Hardware Interruption Callbacks
 // ==========================================
-__attribute__((section(".itcm_text"))) void
-can_global_handle(FDCAN_HandleTypeDef *hfdcan, const uint32_t identifier,
-                  const uint8_t *data, const pyro::can_msg_buffer_t::id_type_t type)
-{
-    // Direct callback to bsp_can instances
-    // This is now handled by bsp_can implementation
-}
-
-extern "C" __attribute__((section(".itcm_text"))) void
-HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
-{
-    FDCAN_RxHeaderTypeDef rx_header;
-    uint8_t data[8];
-
-    if (HAL_OK !=
-        HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &rx_header, data))
-    {
-        return;
-    }
-
-    if (FDCAN_FRAME_CLASSIC == rx_header.RxFrameType &&
-        (FDCAN_STANDARD_ID == rx_header.IdType ||
-         FDCAN_EXTENDED_ID == rx_header.IdType))
-    {
-        const pyro::can_msg_buffer_t::id_type_t type =
-            (rx_header.IdType == FDCAN_EXTENDED_ID)
-            ? pyro::can_msg_buffer_t::EXTENDED_ID
-            : pyro::can_msg_buffer_t::STANDARD_ID;
-        can_global_handle(hfdcan, rx_header.Identifier, data, type);
-    }
-}
+// HAL_FDCAN_RxFifo0Callback is now implemented in pyro_bsp_can.cpp
