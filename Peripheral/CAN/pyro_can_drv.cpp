@@ -1,3 +1,7 @@
+/**
+ * @version 1.1.0
+ */
+
 #include "pyro_can_drv.h"
 #include "main.h"
 #include <cstring>

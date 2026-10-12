@@ -1,3 +1,7 @@
+/**
+ * @version 1.1.0
+ */
+
 #include "pyro_motor_base.h"
 
 namespace pyro

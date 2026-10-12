@@ -1,7 +1,9 @@
+/**
+ * @version 1.1.0
+ */
+
 #include "pyro_dji_motor_drv.h"
-
 #include "pyro_dwt_drv.h"
-
 #include <cmath>
 #include <cstring>
 

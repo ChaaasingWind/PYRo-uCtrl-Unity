@@ -1,3 +1,7 @@
+/**
+ * @version 1.1.0
+ */
+
 #ifndef CYBERGEAR_MOTOR_DRV_H
 #define CYBERGEAR_MOTOR_DRV_H
 

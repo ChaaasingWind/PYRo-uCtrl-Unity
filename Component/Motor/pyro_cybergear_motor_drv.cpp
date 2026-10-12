@@ -1,3 +1,7 @@
+/**
+ * @version 1.1.0
+ */
+
 #include "pyro_cybergear_motor_drv.h"
 #include <cstring>
 

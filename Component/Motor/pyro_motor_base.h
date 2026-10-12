@@ -1,3 +1,7 @@
+/**
+ * @version 1.1.0
+ */
+
 #ifndef MOTOR_BASE_H
 #define MOTOR_BASE_H
 

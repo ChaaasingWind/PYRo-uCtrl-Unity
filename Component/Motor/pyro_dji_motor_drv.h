@@ -1,3 +1,7 @@
+/**
+ * @version 1.1.0
+ */
+
 #ifndef DJI_M_MOTOR_DRV_H
 #define DJI_M_MOTOR_DRV_H
 

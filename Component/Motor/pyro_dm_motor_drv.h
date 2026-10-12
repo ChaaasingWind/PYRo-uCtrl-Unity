@@ -1,3 +1,7 @@
+/**
+ * @version 1.1.0
+ */
+
 #ifndef DM_MOTOR_DRV_H
 #define DM_MOTOR_DRV_H
 
